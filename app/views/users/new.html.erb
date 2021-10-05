@@ -1,17 +1,11 @@
 <h1>Welcome! Please sign up below!</h1>
 <p>Be sure to use a valid email address and</p>
 <p>your password is at least 6 characters long</p>
-<p> (do not use a real email just have an @ symbol lol)</p>
+<p>(do not use a real email just have an @ symbol for validation)</p>
+<p>(for simplicity sake, emails do not need to be unique and you can use the default input)</p>
 
-<%= form_with model: User.new do |form| %>
-  <%= form.label :username, "Username:" %>
-  <%= form.text_field :username %>
-  <%= form.label :email, "Email:" %>
-  <%= form.email_field :email %>
-  <%= form.label :password, "Password:" %>
-  <%= form.password_field :password %>
-  <%= form.submit "Submit!" %>
-<% end %>
+<%= render "form", user: @user %>
+
 
 <% if false %>
 <form action="/users" method="post" accept-charset="UTF-8">
